@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customers.CustomersFXMLController">
+   <children>
+      <MenuBar prefHeight="29.0" prefWidth="717.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ScrollPane layoutY="29.0" prefHeight="470.0" prefWidth="717.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="714.0">
+               <children>
+                  <TabPane layoutX="-1.0" layoutY="14.0" prefHeight="449.0" prefWidth="717.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Client Information">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="11.0" layoutY="35.0" prefHeight="17.0" prefWidth="106.0" text="Company Name" />
+                                    <TextField fx:id="companyNameTextField" layoutX="11.0" layoutY="52.0" prefHeight="27.0" prefWidth="342.0" />
+                                    <Label layoutX="11.0" layoutY="88.0" prefHeight="17.0" prefWidth="106.0" text="Primary Contact" />
+                                    <TextField fx:id="firstNameTextField" layoutX="11.0" layoutY="105.0" promptText="First Name" />
+                                    <TextField fx:id="lastNameTextField" layoutX="187.0" layoutY="105.0" promptText="Last Name" />
+                                    <Label layoutX="11.0" layoutY="132.0" prefHeight="17.0" prefWidth="106.0" text="Address" />
+                                    <TextField fx:id="primaryStreetAddressTextField" layoutX="11.0" layoutY="149.0" prefHeight="27.0" prefWidth="342.0" promptText="Street Address" />
+                                    <TextField fx:id="secondaryStreetAddressTextField" layoutX="11.0" layoutY="181.0" prefHeight="27.0" prefWidth="342.0" promptText="P.O. Box, Apartment No., Suite" />
+                                    <Label layoutX="11.0" layoutY="208.0" prefHeight="17.0" prefWidth="106.0" text="City" />
+                                    <TextField fx:id="cityTextField" layoutX="11.0" layoutY="225.0" promptText="City" />
+                                    <Label layoutX="182.0" layoutY="208.0" prefHeight="17.0" prefWidth="106.0" text="State" />
+                                    <ComboBox fx:id="stateComboBox" layoutX="182.0" layoutY="225.0" prefHeight="27.0" prefWidth="172.0" />
+                                    <Label layoutX="11.0" layoutY="252.0" prefHeight="17.0" prefWidth="106.0" text="Zip Code" />
+                                    <TextField fx:id="zipCodeTextField" layoutX="11.0" layoutY="269.0" promptText="Zip Code" />
+                                    <Label layoutX="182.0" layoutY="252.0" prefHeight="17.0" prefWidth="106.0" text="Country" />
+                                    <ComboBox fx:id="countryComboBox" layoutX="182.0" layoutY="269.0" prefHeight="27.0" prefWidth="172.0" />
+                                    <Label layoutX="372.0" layoutY="35.0" prefHeight="17.0" prefWidth="106.0" text="Email Address" />
+                                    <TextField fx:id="emailAddressTextField" layoutX="372.0" layoutY="52.0" prefHeight="27.0" prefWidth="335.0" />
+                                    <Label layoutX="372.0" layoutY="88.0" prefHeight="17.0" prefWidth="123.0" text="Mobile Phone" />
+                                    <TextField fx:id="mobileTextField" layoutX="372.0" layoutY="105.0" prefHeight="27.0" prefWidth="150.0" />
+                                    <Label layoutX="531.0" layoutY="88.0" prefHeight="17.0" prefWidth="123.0" text="Home Phone" />
+                                    <TextField fx:id="homeTextField" layoutX="531.0" layoutY="105.0" prefHeight="27.0" prefWidth="150.0" />
+                                    <Label layoutX="372.0" layoutY="132.0" prefHeight="17.0" prefWidth="123.0" text="Work Phone" />
+                                    <TextField fx:id="workTextField" layoutX="372.0" layoutY="149.0" prefHeight="27.0" prefWidth="150.0" />
+                                    <Label layoutX="531.0" layoutY="132.0" prefHeight="17.0" prefWidth="123.0" text="Fax Number" />
+                                    <TextField fx:id="faxTextField" layoutX="531.0" layoutY="149.0" prefHeight="27.0" prefWidth="150.0" />
+                                    <Label layoutX="372.0" layoutY="186.0" prefHeight="17.0" prefWidth="106.0" text="Website" />
+                                    <TextField fx:id="websiteURLTextField" layoutX="372.0" layoutY="203.0" prefHeight="27.0" prefWidth="335.0" />
+                                    <RadioButton fx:id="individualTypeRadioButton" layoutX="372.0" layoutY="283.0" mnemonicParsing="false" text="Individual">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="clientTypeGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="businessTypeRadioButton" layoutX="457.0" layoutY="283.0" mnemonicParsing="false" text="Business" toggleGroup="$clientTypeGroup" />
+                                    <Button layoutX="644.0" layoutY="14.0" mnemonicParsing="false" onAction="#saveClientInformation" prefHeight="27.0" prefWidth="63.0" text="Save" />
+                                    <Label layoutX="372.0" layoutY="230.0" prefHeight="17.0" prefWidth="106.0" text="Web Host" />
+                                    <TextField fx:id="webHostTextField" layoutX="372.0" layoutY="247.0" prefHeight="27.0" prefWidth="335.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Invoicing">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="invoicingTableView" layoutY="41.0" prefHeight="375.0" prefWidth="717.0">
+                                      <columns>
+                                        <TableColumn prefWidth="75.0" text="ID" />
+                                        <TableColumn prefWidth="146.0" text="Category" />
+                                          <TableColumn prefWidth="229.0" text="Short Description" />
+                                          <TableColumn prefWidth="95.0" text="Status" />
+                                          <TableColumn prefWidth="171.0" text="Amount" />
+                                      </columns>
+                                    </TableView>
+                                    <Button layoutX="644.0" layoutY="8.0" mnemonicParsing="false" text="Total ∑" />
+                                    <Button layoutX="527.0" layoutY="8.0" mnemonicParsing="false" text="Amount Owed" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

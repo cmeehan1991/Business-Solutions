@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="379.0" prefWidth="169.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="navigation.NavigationController">
+   <children>
+      <Accordion prefHeight="379.0" prefWidth="169.0">
+        <panes>
+          <TitledPane animated="false" text="Invoicing" textAlignment="CENTER">
+               <content>
+                  <AnchorPane id="navigation__link-display" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Hyperlink fx:id="newInvoiceLink" layoutX="14.0" layoutY="14.0" onAction="#createNewInvoice" text="New Invoice" />
+                        <Hyperlink fx:id="addEditInvoiceLink" layoutX="14.0" layoutY="39.0" onAction="#updateInvoice" text="Add/Edit Invoice" />
+                        <Hyperlink fx:id="timeEntryLink" layoutX="14.0" layoutY="64.0" onAction="#timeEntry" text="Time Entry" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+          <TitledPane animated="false" text="Scheduling">
+               <content>
+                  <AnchorPane id="navigation__link-display" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Hyperlink layoutX="14.0" layoutY="14.0" text="New Invoice" />
+                        <Hyperlink layoutX="14.0" layoutY="39.0" text="Add/Edit Invoice" />
+                        <Hyperlink layoutX="14.0" layoutY="64.0" text="Time Entry" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Customers">
+               <content>
+                  <AnchorPane id="navigation__link-display" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Hyperlink onAction="#addNewCustomer" prefHeight="25.0" prefWidth="140.0" text="Add New Customer" />
+                        <Hyperlink layoutY="25.0" onAction="#viewEditCustomer" prefHeight="25.0" prefWidth="145.0" text="View/Edit Customer" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>

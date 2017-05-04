@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invoices.InvoiceController">
+   <children>
+      <ScrollPane layoutY="28.0" prefHeight="427.0" prefWidth="656.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="653.0">
+               <children>
+                  <ComboBox fx:id="clientNameComboBox" layoutX="245.0" layoutY="48.0" prefWidth="150.0" />
+                  <Label layoutX="207.0" layoutY="53.0" prefHeight="17.0" prefWidth="38.0" text="Client" />
+                  <ComboBox fx:id="projectTypeComboBox" layoutX="488.0" layoutY="48.0" prefWidth="150.0" />
+                  <Label layoutX="405.0" layoutY="53.0" prefHeight="17.0" prefWidth="83.0" text="Project Type" />
+                  <TableView fx:id="invoiceTableView" layoutX="13.0" layoutY="122.0" prefHeight="265.0" prefWidth="628.0" />
+                  <TextField fx:id="invoiceIDTextField" layoutX="13.0" layoutY="48.0" promptText="Invoice ID" />
+                  <Button layoutX="590.0" layoutY="14.0" mnemonicParsing="false" onAction="#save" text="Save" />
+                  <Button layoutX="540.0" layoutY="14.0" mnemonicParsing="false" onAction="#print" text="Print" />
+                  <Button layoutX="473.0" layoutY="14.0" mnemonicParsing="false" onAction="#export" text="Export" />
+                  <TextField fx:id="projectNameTextField" layoutX="13.0" layoutY="82.0" prefHeight="27.0" prefWidth="626.0" promptText="Project Short Description" />
+                  <Button fx:id="addRow" layoutX="14.0" layoutY="389.0" mnemonicParsing="false" onAction="#addRow" text="Add Row" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <MenuBar prefHeight="29.0" prefWidth="656.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

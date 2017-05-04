@@ -1,0 +1,24 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 3, 2017, 3:01:00 PM
+    Author     : cmeehan
+*/
+
+AnchorPane{
+    -fx-background-color: #000000;
+}
+
+#textField__square{
+    -fx-fill: #000000;
+}
+
+#signInButton{
+    /*-fx-border-color: #66ff66;*/
+    -fx-background-color: #4dd2ff;
+    -fx-text-fill: #cc3399;
+    cursor:pointer;
+}
