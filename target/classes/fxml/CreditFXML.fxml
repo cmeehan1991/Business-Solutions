@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="678.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="accounting.CreditFXMLController">
+   <children>
+      <ScrollPane layoutY="95.0" prefHeight="440.0" prefWidth="976.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="579.0" prefWidth="974.0" style="-fx-background-color: ffffff;">
+               <children>
+                  <GridPane layoutX="21.0" layoutY="73.0" prefHeight="132.0" prefWidth="331.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="286.0" minWidth="10.0" prefWidth="98.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="549.0" minWidth="10.0" prefWidth="216.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Receive From:" />
+                        <Label text="Amount:" GridPane.rowIndex="2" />
+                        <TextField fx:id="amountTextField" prefHeight="27.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Date:" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="paymentDatePicker" prefHeight="27.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Apply To:" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="receiveFromComboBox" prefHeight="27.0" prefWidth="222.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="applyToComboBox" prefHeight="27.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <ButtonBar layoutX="386.0" layoutY="86.0" prefHeight="92.0" prefWidth="317.0">
+                    <buttons>
+                      <Button fx:id="payPalButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="PayPal" textAlignment="CENTER" />
+                        <Button fx:id="creditButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="Credit / Debit " textAlignment="CENTER" wrapText="true" />
+                        <Button fx:id="cashButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="Cash" textAlignment="CENTER" />
+                        <Button fx:id="checkButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="Check" textAlignment="CENTER" />
+                    </buttons>
+                  </ButtonBar>
+                  <TableView fx:id="paymentsTable" layoutX="14.0" layoutY="209.0" prefHeight="139.0" prefWidth="946.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+                  <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="360.0" prefHeight="133.0" prefWidth="268.0" text="UNDERPAYMENT">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="94.0" prefWidth="200.0" style="-fx-background-color: ffffff;">
+                           <children>
+                              <Label fx:id="underpaymentLabel" alignment="CENTER_RIGHT" layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="252.0" text="Label" textAlignment="RIGHT">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="leaveRadioButton" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" selected="true" text="Leave this as an underpayment">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="underpaymentGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="writeOffRadioButton" layoutX="14.0" layoutY="53.0" mnemonicParsing="false" text="Write off the extra amount" toggleGroup="$underpaymentGroup" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </TitledPane>
+                  <TitledPane animated="false" collapsible="false" layoutX="640.0" layoutY="360.0" prefHeight="165.0" prefWidth="320.0" style="-fx-background-color: ffffff;" text="Amounts for Selected Invoices">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="137.0" prefWidth="306.0" style="-fx-background-color: ffffff;">
+                           <children>
+                              <GridPane layoutY="24.0" style="-fx-background-color: ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Amount Due:" />
+                                    <Label text="Amount Applied:" GridPane.rowIndex="1" />
+                                    <Label text="Discounts and Credits Applied:" wrapText="true" GridPane.rowIndex="2" />
+                                    <Label fx:id="amountDueLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                                    <Label fx:id="amountAppliedLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                    <Label fx:id="discountsLabel" text="Label" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <Button defaultButton="true" layoutX="860.0" layoutY="538.0" mnemonicParsing="false" onAction="#saveAndClose" text="Save &amp; Close" />
+                  <Button layoutX="753.0" layoutY="538.0" mnemonicParsing="false" onAction="#saveAndNew" text="Save &amp; New" />
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="45.0" prefWidth="359.0" text="Customer Payment">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="508.0" text="Memo" />
+                  <TextField fx:id="memoTextField" layoutX="65.0" layoutY="503.0" prefHeight="27.0" prefWidth="214.0" />
+                  <Label fx:id="currentBalanceLabel" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="830.0" layoutY="14.0" prefHeight="17.0" prefWidth="130.0" text="\$0.00" textAlignment="RIGHT" />
+                  <Label layoutX="716.0" layoutY="14.0" text="Current Balance:" />
+                  <Label layoutX="65.0" layoutY="530.0" text="Chars:" />
+                  <Label fx:id="charsLabel" alignment="CENTER_RIGHT" layoutX="114.0" layoutY="530.0" prefHeight="17.0" prefWidth="164.0" text="200" />
+                  <Label fx:id="creditIdLabelLabel" layoutX="716.0" layoutY="36.0" text="Credit ID:" />
+                  <Label fx:id="creditIdLabel" alignment="CENTER_RIGHT" layoutX="781.0" layoutY="36.0" prefHeight="17.0" prefWidth="179.0" text="0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button fx:id="newPayment" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#newPayment" prefHeight="80.0" prefWidth="70.0" text="New" />
+      <Separator layoutX="84.0" layoutY="13.0" orientation="VERTICAL" prefHeight="70.0" prefWidth="20.0" />
+      <Button fx:id="exportReceipt" layoutX="104.0" layoutY="8.0" mnemonicParsing="false" onAction="#exportReceipt" prefHeight="80.0" prefWidth="70.0" text="Export" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="emailReceipt" layoutX="185.0" layoutY="8.0" mnemonicParsing="false" onAction="#emailReceipt" prefHeight="80.0" prefWidth="70.0" text="Email " textAlignment="CENTER" wrapText="true" />
+   </children>
+</AnchorPane>

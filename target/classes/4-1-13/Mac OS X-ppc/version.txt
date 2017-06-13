@@ -1,0 +1,3 @@
+Without installer (tar.gz, Mac OS X v10.3)
+mysql-standard-4.1.13-apple-darwin7.9.0-powerpc.tar.gz
+./bin/mysqld

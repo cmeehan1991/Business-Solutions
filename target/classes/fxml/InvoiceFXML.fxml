@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invoices.InvoiceController">
+   <children>
+      <ScrollPane prefHeight="660.0" prefWidth="884.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="667.0" prefWidth="890.0" style="-fx-background-color: ffffff;">
+               <children>
+                  <Button layoutX="764.0" layoutY="617.0" mnemonicParsing="false" onAction="#saveAndClose" text="Save &amp; Close" />
+                  <Button contentDisplay="TOP" layoutX="319.0" layoutY="14.0" mnemonicParsing="false" onAction="#printInvoice" prefHeight="58.0" prefWidth="62.0" text="Print" />
+                  <Button layoutX="412.0" layoutY="15.0" mnemonicParsing="false" onAction="#exportInvoice" prefHeight="58.0" prefWidth="58.0" text="Export" />
+                  <Pane layoutY="77.0" prefHeight="59.0" prefWidth="836.0" style="-fx-background-color: #1a1a1a;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <TextField fx:id="invoiceIDTextField" layoutX="15.0" layoutY="20.0" promptText="Invoice ID" />
+                        <ComboBox fx:id="clientNameComboBox" layoutX="189.0" layoutY="20.0" prefWidth="150.0" promptText="Client" />
+                        <ComboBox fx:id="projectComboBox" layoutX="343.0" layoutY="20.0" prefWidth="150.0" promptText="Project" />
+                        <ComboBox fx:id="invoiceTypeComboBox" layoutX="501.0" layoutY="20.0" prefWidth="150.0" promptText="Invoice Type" />
+                     </children>
+                  </Pane>
+                  <TextField fx:id="invoiceNameTextField" layoutX="126.0" layoutY="180.0" prefHeight="27.0" prefWidth="357.0" promptText="Project Short Description" />
+                  <TextArea fx:id="descriptionTextArea" layoutX="128.0" layoutY="216.0" prefHeight="157.0" prefWidth="353.0" promptText="Notes" wrapText="true" />
+                  <TextField fx:id="totalDueTextField" layoutX="751.0" layoutY="569.0" prefWidth="117.0" />
+                  <Button fx:id="invoiceSumButton" layoutX="718.0" layoutY="569.0" mnemonicParsing="false" onAction="#calculateTotalDue" text="∑" />
+                  <TableView fx:id="invoiceTableView" layoutY="382.0" prefHeight="183.0" prefWidth="836.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <CheckBox fx:id="noChargeCheckBox" layoutX="622.0" layoutY="574.0" mnemonicParsing="false" text="No Charge" />
+                  <Button fx:id="addRow" layoutX="14.0" layoutY="569.0" mnemonicParsing="false" onAction="#addRow" text="Add Row" />
+                  <Text layoutX="27.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="78.0" fitWidth="102.0" layoutX="25.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icon.png" />
+                     </image>
+                  </ImageView>
+                  <TextArea fx:id="billToTextArea" layoutX="493.0" layoutY="219.0" prefHeight="157.0" prefWidth="185.0" wrapText="true" />
+                  <Label layoutX="493.0" layoutY="199.0" text="Bill To:" />
+                  <Button layoutX="661.0" layoutY="617.0" mnemonicParsing="false" onAction="#saveAndNew" text="Save &amp; New" />
+                  <Button layoutX="535.0" layoutY="617.0" mnemonicParsing="false" text="Revert Changes" />
+                  <Text fx:id="invoiceStatusLabel" layoutX="13.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="107.21875">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <DatePicker fx:id="paymentDueDatePicker" layoutX="688.0" layoutY="217.0" />
+                  <Label layoutX="688.0" layoutY="199.0" text="Payment Due:" />
+                  <Button layoutX="247.0" layoutY="15.0" mnemonicParsing="false" onAction="#emailInvoice" prefHeight="58.0" prefWidth="58.0" text="Email" />
+                  <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#newInvoice" prefHeight="58.0" prefWidth="58.0" text="New" />
+                  <Button layoutX="91.0" layoutY="14.0" mnemonicParsing="false" onAction="#saveInvoice" prefHeight="58.0" prefWidth="58.0" text="Save" />
+                  <Button layoutX="160.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteInvoice" prefHeight="58.0" prefWidth="58.0" text="Delete" />
+                  <Separator layoutX="229.0" layoutY="22.0" orientation="VERTICAL" prefHeight="43.0" prefWidth="7.0" />
+                  <Separator layoutX="395.0" layoutY="22.0" orientation="VERTICAL" prefHeight="43.0" prefWidth="7.0" />
+                  <ListView layoutX="688.0" layoutY="270.0" prefHeight="104.0" prefWidth="191.0" />
+                  <Label layoutX="691.0" layoutY="253.0" text="Payments Received" />
+                  <Button layoutX="500.0" layoutY="15.0" mnemonicParsing="false" onAction="#receivePayment" prefHeight="58.0" prefWidth="74.0" text="Receive Payment" textAlignment="CENTER" wrapText="true" />
+                  <Separator layoutX="483.0" layoutY="22.0" orientation="VERTICAL" prefHeight="43.0" prefWidth="7.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

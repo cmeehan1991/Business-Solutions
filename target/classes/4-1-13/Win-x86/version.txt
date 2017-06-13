@@ -1,0 +1,3 @@
+Without installer (unzip in C:\)
+mysql-noinstall-4.1.13-win32.zip
+./bin/mysqld-nt.exe

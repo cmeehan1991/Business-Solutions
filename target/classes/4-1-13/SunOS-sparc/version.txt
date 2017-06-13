@@ -1,0 +1,3 @@
+Solaris 9 (SPARC, 32-bit)
+mysql-standard-4.1.13-sun-solaris2.9-sparc.tar.gz
+./bin/mysqld

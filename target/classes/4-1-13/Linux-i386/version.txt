@@ -1,0 +1,3 @@
+Linux (x86, glibc-2.2, static, gcc)
+mysql-standard-4.1.13-pc-linux-gnu-i686.tar.gz
+./bin/mysqld

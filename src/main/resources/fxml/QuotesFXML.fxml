@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="658.0" prefWidth="945.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quotes.QuotesFXMLController">
+   <children>
+      <ScrollPane layoutY="93.0" prefHeight="400.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="650.0" prefWidth="943.0" style="-fx-background-color: ffffff;">
+               <children>
+                  <Pane layoutY="84.0" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="516.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="84.0">
+                     <children>
+                        <TextField fx:id="quoteIDTextField" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="164.0" promptText="Quote ID" />
+                        <ComboBox fx:id="clientComboBox" layoutX="189.0" layoutY="12.0" prefHeight="27.0" prefWidth="206.0" promptText="Client" />
+                        <ComboBox fx:id="projectTypeComboBox" layoutX="397.0" layoutY="12.0" prefWidth="150.0" promptText="Project Type" />
+                     </children>
+                  </Pane>
+                  <Button layoutX="17.0" layoutY="19.0" mnemonicParsing="false" onAction="#newQuote" prefHeight="58.0" prefWidth="58.0" text="New" AnchorPane.rightAnchor="870.0" />
+                  <Button layoutX="87.0" layoutY="19.0" mnemonicParsing="false" onAction="#saveQuote" prefHeight="58.0" prefWidth="58.0" text="Save" />
+                  <Button layoutX="157.0" layoutY="19.0" mnemonicParsing="false" onAction="#deleteQuote" prefHeight="58.0" prefWidth="58.0" text="Delete" />
+                  <Separator layoutX="227.0" layoutY="19.0" orientation="VERTICAL" prefHeight="58.0" prefWidth="5.0" />
+                  <Button layoutX="247.0" layoutY="19.0" mnemonicParsing="false" onAction="#emailQuote" prefHeight="58.0" prefWidth="58.0" text="Email" />
+                  <Button layoutX="317.0" layoutY="19.0" mnemonicParsing="false" onAction="#printQuote" prefHeight="58.0" prefWidth="58.0" text="Print" />
+                  <Button layoutX="407.0" layoutY="19.0" mnemonicParsing="false" onAction="#exportQuote" prefHeight="58.0" prefWidth="58.0" text="Export" />
+                  <Separator layoutX="387.0" layoutY="19.0" orientation="VERTICAL" prefHeight="58.0" prefWidth="5.0" />
+                  <Label layoutX="27.0" layoutY="144.0" text="Quote">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="78.0" fitWidth="102.0" layoutX="26.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/icon.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="typeDescriptionTextField" layoutX="116.0" layoutY="145.0" prefHeight="27.0" prefWidth="450.0" promptText="Quote Short Description" />
+                  <TextArea fx:id="notesTextArea" layoutX="116.0" layoutY="184.0" prefHeight="200.0" prefWidth="450.0" promptText="Notes" wrapText="true" />
+                  <DatePicker fx:id="startDatePicker" layoutX="579.0" layoutY="145.0" promptText="Start Date" />
+                  <DatePicker fx:id="completionDatePicker" layoutX="579.0" layoutY="184.0" promptText="Completion Date" />
+                  <CheckBox fx:id="deadlineCheckBox" layoutX="784.0" layoutY="189.0" mnemonicParsing="false" text="Deadline" />
+                  <RadioButton fx:id="typePersonal" layoutX="589.0" layoutY="230.0" mnemonicParsing="false" selected="true" text="Personal">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="siteTypeGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="typeBusiness" layoutX="672.0" layoutY="230.0" mnemonicParsing="false" text="Business" toggleGroup="$siteTypeGroup" />
+                  <TextField fx:id="webHostTextField" layoutX="580.0" layoutY="271.0" prefHeight="27.0" prefWidth="250.0" promptText="Web Host" />
+                  <TextField fx:id="urlTextField" layoutX="580.0" layoutY="312.0" prefHeight="27.0" prefWidth="250.0" promptText="URL" />
+                  <TextField fx:id="budgetTextField" layoutX="580.0" layoutY="349.0" prefHeight="27.0" prefWidth="250.0" promptText="Budget" />
+                  <CheckBox fx:id="ownedCheckBox" layoutX="841.0" layoutY="317.0" mnemonicParsing="false" text="Owned" />
+                  <CheckBox fx:id="flexibleCheckBox" layoutX="840.0" layoutY="354.0" mnemonicParsing="false" text="Flexible" />
+                  <TableView fx:id="quoteItemizationTable" layoutX="3.0" layoutY="394.0" prefHeight="194.0" prefWidth="938.0" />
+                  <Button layoutX="748.0" layoutY="595.0" mnemonicParsing="false" onAction="#addNewRow" text="Add Row" />
+                  <Button layoutX="834.0" layoutY="595.0" mnemonicParsing="false" onAction="#removeRow" text="Remove Row" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
