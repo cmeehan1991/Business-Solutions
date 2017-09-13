@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -46,14 +48,6 @@
                         <ComboBox fx:id="applyToComboBox" prefHeight="27.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="386.0" layoutY="86.0" prefHeight="92.0" prefWidth="317.0">
-                    <buttons>
-                      <Button fx:id="payPalButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="PayPal" textAlignment="CENTER" />
-                        <Button fx:id="creditButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="Credit / Debit " textAlignment="CENTER" wrapText="true" />
-                        <Button fx:id="cashButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="Cash" textAlignment="CENTER" />
-                        <Button fx:id="checkButton" mnemonicParsing="false" onAction="#setPaymentType" prefHeight="80.0" prefWidth="50.0" text="Check" textAlignment="CENTER" />
-                    </buttons>
-                  </ButtonBar>
                   <TableView fx:id="paymentsTable" layoutX="14.0" layoutY="209.0" prefHeight="139.0" prefWidth="946.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
                   <TitledPane animated="false" collapsible="false" layoutX="14.0" layoutY="360.0" prefHeight="133.0" prefWidth="268.0" text="UNDERPAYMENT">
                     <content>
@@ -116,6 +110,33 @@
                   <Label fx:id="charsLabel" alignment="CENTER_RIGHT" layoutX="114.0" layoutY="530.0" prefHeight="17.0" prefWidth="164.0" text="200" />
                   <Label fx:id="creditIdLabelLabel" layoutX="716.0" layoutY="36.0" text="Credit ID:" />
                   <Label fx:id="creditIdLabel" alignment="CENTER_RIGHT" layoutX="781.0" layoutY="36.0" prefHeight="17.0" prefWidth="179.0" text="0" />
+                  <ToggleButtonGroup layoutX="416.0" layoutY="112.0" prefHeight="27.0" prefWidth="323.0" selectionType="SINGLE">
+                      <toggles>
+                          <ToggleButton selected="true" text="PayPal">
+                              <graphic>
+                                  <Icon content="ADD" />
+                              </graphic>
+                          </ToggleButton>
+                          <ToggleButton text="Credit/Debit">
+                              <graphic>
+                                  <Icon content="CARD_GIFTCARD" />
+                              </graphic>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="paymentMethodGroup" />
+                           </toggleGroup>
+                          </ToggleButton>
+                          <ToggleButton text="Cash">
+                              <graphic>
+                                  <Icon content="FORMAT_ALIGN_RIGHT" />
+                              </graphic>
+                          </ToggleButton>
+                        <ToggleButton mnemonicParsing="false" text="Cash">
+                           <graphic>
+                              <Icon content="HELP_OUTLINE" />
+                           </graphic>
+                        </ToggleButton>
+                      </toggles>
+                  </ToggleButtonGroup>
                </children>
             </AnchorPane>
         </content>

@@ -16,7 +16,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customers.CustomersFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cbmwebdevelopment.customers.CustomersFXMLController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="717.0">
         <menus>
@@ -37,15 +37,15 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ScrollPane layoutY="29.0" prefHeight="470.0" prefWidth="717.0">
+      <ScrollPane layoutY="29.0" prefHeight="470.0" prefWidth="717.0" style="-fx-background-color: ffffff;">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="714.0">
                <children>
-                  <TabPane layoutX="-1.0" layoutY="14.0" prefHeight="449.0" prefWidth="717.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutX="-1.0" layoutY="14.0" prefHeight="449.0" prefWidth="717.0" style="-fx-background-color: ffffff;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="Client Information">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: ffffff;">
                                  <children>
                                     <Label layoutX="11.0" layoutY="35.0" prefHeight="17.0" prefWidth="106.0" text="Company Name" />
                                     <TextField fx:id="companyNameTextField" layoutX="11.0" layoutY="52.0" prefHeight="27.0" prefWidth="342.0" />

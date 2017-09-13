@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="379.0" prefWidth="169.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="navigation.NavigationController">
+<AnchorPane id="AnchorPane" prefHeight="379.0" prefWidth="169.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cbmwebdevelopment.navigation.NavigationController">
    <children>
       <Accordion prefHeight="379.0" prefWidth="169.0">
         <panes>
@@ -41,17 +41,18 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-          <TitledPane animated="false" text="Business Management">
+          <TitledPane animated="false" text="Accounting">
                <content>
                   <AnchorPane id="navigation__link-display" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Hyperlink layoutX="14.0" layoutY="14.0" onAction="#scheduler" prefHeight="25.0" prefWidth="115.0" text="Scheduler" />
-                        <Hyperlink layoutX="14.0" layoutY="39.0" onAction="#accounting" prefHeight="25.0" prefWidth="115.0" text="Accounting" />
+                        <Hyperlink layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="123.0" text="Account Overview" />
+                        <Hyperlink layoutX="14.0" layoutY="39.0" onAction="#accounting" prefHeight="25.0" prefWidth="115.0" text="Credits/Debits" />
+                        <Hyperlink layoutX="14.0" layoutY="64.0" prefHeight="25.0" prefWidth="115.0" text="Account Audit" />
                      </children>
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TitledPane animated="false" text="Clients">
+            <TitledPane animated="false" text="Client Management">
                <content>
                   <AnchorPane id="navigation__link-display" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
@@ -61,12 +62,12 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TitledPane animated="false" text="Site Management">
+            <TitledPane animated="false" text="Website Data">
                <content>
                   <AnchorPane id="navigation__link-display" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Hyperlink layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="115.0" text="Scheduler" />
-                        <Hyperlink layoutX="14.0" layoutY="39.0" prefHeight="25.0" prefWidth="115.0" text="Payments" />
+                        <Hyperlink layoutY="14.0" prefHeight="25.0" prefWidth="122.0" text="Website Overview" />
+                        <Hyperlink layoutY="39.0" prefHeight="25.0" prefWidth="130.0" text="Database Summary" />
                      </children>
                   </AnchorPane>
                </content>

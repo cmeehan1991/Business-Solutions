@@ -34,6 +34,7 @@ customers/CustomerInvoiceTable$InvoiceItems.class
 quotes/QuoteItemizationTable$EditingCell.class
 notifications/Toast.class
 quotes/QuotesMain.class
+accounting/CreditTableController$AccountingItems.class
 projects/ProjectsBillingTableViewController$EditingCell.class
 main/Main.class
 customers/CustomerInvoiceTable$EditingCell.class
@@ -50,6 +51,7 @@ userLogin/UserLoginController.class
 projects/search/ProjectsSearchFXMLController.class
 accounting/AccountingMain.class
 projects/ProjectsMain.class
+accounting/CreditTableController.class
 accounting/Accounting.class
 customers/CustomersMain.class
 customers/Client.class
